@@ -17,6 +17,7 @@ const Mag = -1.0
 // 本体
 type Lattice struct {
 	Spin [L][L]float64 `label:"スピンの値"`
+	Temperature float64 `label:"温度"`
 }
 
 // Loop 単純な要素の走査
@@ -49,4 +50,9 @@ func (lat *Lattice) SpinEnergy(x, y int) (energy float64) {
 		lat.Spin[(x+1)%L][y]
 	energy = Mag * lat.Spin[x][y] * nears
 	return
+}
+
+// スピンをひっくり返す
+func (lat *Lattice) Flip(x, y int) (){
+	lat.Spin[x][y] *= -1.0
 }
