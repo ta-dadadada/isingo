@@ -9,7 +9,7 @@ package lattice
 import "math/rand"
 
 // エッジサイズ
-const L = 256
+const L = 512
 
 // 磁化
 const Mag = -1.0
@@ -35,6 +35,10 @@ func (lat *Lattice) RandomizeSpin(x, y int) {
 // ランダムに初期化する
 func (lat *Lattice) Initialize() {
 	lat.Loop(lat.RandomizeSpin)
+}
+
+func (lat *Lattice) Fill() {
+	lat.Loop(func(x, y int) { lat.Spin[x][y] = 1 })
 }
 
 // あるスピン1つのエネルギー
