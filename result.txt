@@ -1,0 +1,4 @@
+normal: result=-524288 time=2.583387354s
+checker board:result=-524288 time=2.570065429s
+bakapara:result=-524288 time=2m56.288317773s
+checker board para:result=-524288 time=1.765174601s
